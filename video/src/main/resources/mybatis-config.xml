@@ -6,7 +6,7 @@
 <configuration>
     <properties resource="db.properties"/>
     <typeAliases>
-        <package name="cn.ph.video.entity"/>
+        <package name="com.ph.video.entity"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -19,8 +19,4 @@
             </dataSource>
         </environment>
     </environments>
-    <mappers>
-
-    </mappers>
 </configuration>
-    
