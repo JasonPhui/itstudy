@@ -16,7 +16,7 @@ public class VideoIndexController {
 
     @RequestMapping("/video/index")
     public String VideoIndex() {
-        videoService.test();
-        return "/index.html";
+        //videoService.test();
+        return "/video_index.html";
     }
 }

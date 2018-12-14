@@ -1,0 +1,19 @@
+/*!
+ *  讲堂界面的css
+ *
+ */
+
+/* 播放界面*/
+#player {
+  width: 670px;
+  display: block;
+  height: 450px;
+  margin: 0 auto;
+}
+
+/*讲堂主页面*/
+
+.banner-image {
+  width: 265px;
+  height: 146px;
+}

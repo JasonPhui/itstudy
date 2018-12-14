@@ -1,0 +1,228 @@
+<!-- base.html -->
+<html layout:decorator="/base" xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<body>
+<div layout:fragment="content">
+    <div class="container" style="width: 100%;text-align: center">
+        <div class="row" style="background-color: #eeeeee;width: 100%;height: 200px;margin: 10px 0 10px 0">
+            <div class="col-md-4" style="padding: 0">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="#"><b>编辑推荐</b>Home</a></li>
+                    <li role="presentation"><a href="#"><b>编辑推荐</b>Profile</a></li>
+                    <li role="presentation"><a href="#"><b>本周上新</b>Profile</a></li>
+                    <li role="presentation"><a href="#"><b>本周上新</b>Profile</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8" style="padding: 0">
+                <div id="carousel-ad" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+
+                        <li data-target="#carousel-ad" data-slide-to="0" class="active"></li>
+
+                        <li data-target="#carousel-ad" data-slide-to="1"></li>
+
+                        <li data-target="#carousel-ad" data-slide-to="2"></li>
+
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="item active"><img class="img-responsive" src="/resources/images/1.jpg" style="height: 200px;width: 100%;"></div>
+
+                        <div class="item"><img class="img-responsive" src="/resources/images/2.jpg" style="height: 200px;width: 100%"></div>
+
+                        <div class="item"><img class="img-responsive" src="/resources/images/3.jpg" style="height: 200px;width: 100%"></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;width: 100%">
+            <div class="col-md-9 col-xs-12">
+                <div class="hidden-xs">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#">推荐的</a></li>
+                        <li role="presentation"><a href="#" >热门的</a></li>
+                        <li role="presentation"><a href="#" >最新发布</a></li>
+                        <li role="presentation"><a href="#" >朋友在看</a></li>
+                    </ul>
+                </div>
+                <div  style="margin-top: 20px;">
+                    <div class="row" style="padding-right: 0;margin-right: 0;">
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/1.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/2.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 0;margin-bottom: 15px;">
+                            <a href="#" class="thumbnail" style="padding: 0;width: 100%">
+                                <div class="item" style="width: 100%;height: 270px">
+                                    <div style="width: 100%;height: 146px;">
+                                        <img src="/resources/images/3.jpg" alt="..."  style="width: 100%;height: auto">
+                                    </div>
+                                    <div class="note">
+                                        <span>........</span>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 mb20">
+                <div class="list-group hidden-xs">
+
+                </div>
+                <div class="live-index-side-evaluate hidden-xs">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
