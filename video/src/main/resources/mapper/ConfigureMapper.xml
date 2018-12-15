@@ -4,6 +4,15 @@
 
 <mapper namespace="com.ph.video.dao.ConfigureMapper">
 
+    <select id="getConfigure" resultMap="configureMap" parameterType="String">
+        select
+          configure_id,
+          configure_name,
+          configure_val,
+          configure_remark
+        from configure
+        where configure_name=#{name}
+    </select>
     <resultMap id="configureMap" type="Configure">
         <id property="id" column="configure_id"/>
         <result property="name" column="configure_name"/>

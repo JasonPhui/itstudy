@@ -4,6 +4,17 @@
 
 <mapper namespace="com.ph.video.dao.VideoStateMapper">
 
+    <select id="getVideoStateByOrder" resultMap="videoStateMap" parameterType="int">
+        select
+          videostate_id,
+          videostate_order,
+          videostate_name,
+          videostate_cssstyle,
+          videostate_remark
+          from videostate
+          where videostate_order=#{order}
+    </select>
+
     <resultMap id="videoStateMap" type="VideoState">
         <result property="id" column="videostate_id"/>
         <result property="name" column="videostate_name"/>

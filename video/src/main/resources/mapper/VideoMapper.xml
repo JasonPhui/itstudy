@@ -40,7 +40,7 @@
       where v.video_id = #{id}
     </select>
 
-    <select id="getVideoVideoStateById" parameterType="int" resultMap="videoVideoStateMap">
+    <select id="getVideoByOrder" parameterType="int" resultMap="videoVideoStateMap">
       select
        v.video_id,
        v.video_name,
@@ -51,15 +51,24 @@
        v.video_oriurl,
        v.video_thumbnailurl,
        v.video_remark,
+       v.category_id,
        v.videostate_id,
-       c.category_id,
-       c.category_name,
-       c.category_parentid,
-       c.category_remark
+       c.videostate_order,
+       c.videostate_cssstyle,
+       c.videostate_name,
+       c.videostate_remark
       from video v
       inner join videostate c on v.videostate_id = c.videostate_id
-      where v.videostate_id = #{id}
+      where c.videostate_order = #{order}
     </select>
+    
+    <update id="updateVideoByVideo" parameterType="Video">
+        update video
+        set
+        <if test="thumbnailurl != null">video_thumbnailurl=#{thumbnailurl},</if>
+        <if test="videoState != null">videostate_id=#{videoState.id}</if>
+        where video_id=#{id}
+    </update>
 
     <resultMap id="videoMap" type="Video">
         <id property="id" column="video_id"/>
@@ -79,7 +88,7 @@
         <association property="category" resultMap="com.ph.video.dao.CategoryMapper.categoryMap" javaType="Category" fetchType="lazy"/>
     </resultMap>
 
-    <resultMap id="videoVideoStateMap" type="VideoState" extends="videoMap">
+    <resultMap id="videoVideoStateMap" type="Video" extends="videoMap">
         <association property="videoState" resultMap="com.ph.video.dao.VideoStateMapper.videoStateMap" javaType="VideoState" fetchType="lazy"/>
     </resultMap>
 </mapper>

@@ -1,6 +1,8 @@
 package com.ph.video.controller;
 
+import com.ph.video.service.ConfigureService;
 import com.ph.video.service.VideoService;
+import com.ph.video.utils.VideoThumbnailThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class VideoIndexController {
+
+    @Autowired
+    private ConfigureService configureService;
+
     @Autowired
     private VideoService videoService;
 
+    @Autowired
+    private VideoThumbnailThread thread;
+
     @RequestMapping("/video/index")
     public String VideoIndex() {
-        //videoService.test();
         return "/video_index.html";
     }
 }

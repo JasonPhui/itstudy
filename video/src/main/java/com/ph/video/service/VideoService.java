@@ -1,35 +1,25 @@
 package com.ph.video.service;
 
-import com.ph.video.dao.CategoryMapper;
-import com.ph.video.dao.VideoMapper;
 import com.ph.video.entity.Video;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author JasonPhui
- * 2018/12/12
+ * 2018/12/15
  */
-@Service
-public class VideoService {
+public interface VideoService {
 
-    @Autowired
-    private CategoryMapper categoryMapper;
+    /**
+     * 根据video的状态来获取video对象
+     * @param order video的状态码
+     * @return video对象
+     */
+    List<Video> getVideoByOrder(int order);
 
-    @Autowired
-    private VideoMapper videoMapper;
-
-    public void test() {
-        System.out.println(videoMapper.getVideoCategoryById(1).getCategory().getName());
-        Set<Video> set = categoryMapper.getAllCategory().get(0).getVideos();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            Video video = (Video)it.next();
-            System.out.println(video.getName());
-        }
-
-    }
+    /**
+     * 通过Video对象更新数据
+     * @param video Video对象
+     */
+    void updateVideoByVideo(Video video);
 }
