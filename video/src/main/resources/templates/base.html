@@ -26,6 +26,86 @@
             margin-top: 20px;
         }
 
+        @media (max-width: 990px) {
+            #video-header {
+                display: none;
+            }
+        }
+
+        #video-header {
+            height: 200px;
+            background: #e7e7e7;
+            border-top: 1px solid #e7e7e7;
+            border-bottom: 1px solid #e7e7e7;
+            padding-left: 0;
+            margin-left: 0;
+            padding-right: 0;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        #video-header > a.live-item {
+            display: block;
+            height: 20%;
+            line-height: 40px;
+            position: relative;
+        }
+        #video-header a {
+            outline: 0;
+            text-decoration: none;
+        }
+        #video-header a:hover, a:active, a:focus {
+            outline: 0;
+            text-decoration: none;
+            background-color: #ffffff;
+        }
+
+        .cell {
+            border-left: 1px #28a4c9 dashed;
+        }
+
+        .before-circle {
+            position: absolute;
+            left: 25px;
+            top: 15px;
+            height: 7px;
+            width: 7px;
+            background: #5bc0de;
+            border-radius: 50%;
+        }
+        @media (max-width: 1393px) and (min-width: 1198px){
+            .title-index {
+                display: none;
+            }
+        }
+        .desc {
+            padding-left: 1em;
+            color: #5bc0de;
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            float: left;
+        }
+
+        .title {
+            padding-left: 50px;
+            color: #5bc0de;
+            float: left;
+        }
+
+        @media (max-width: 1105px) {
+            #navbar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 961px) {
+            #navbar-left {
+                display: none;
+            }
+        }
+
         /*导航栏搜索框*/
         .search a:link, a:visited, a {
             text-decoration:none;  /*超链接无下划线*/
@@ -45,7 +125,7 @@
     <!--启用响应式特性-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--include bootstrap3 css-->
-    <link href="/resources/js/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/resources/js/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/resources/css/video.css"/>
     <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
     <script src="/resources/webjars/jquery/3.2.1/jquery.min.js"></script>

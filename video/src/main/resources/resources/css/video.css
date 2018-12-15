@@ -17,3 +17,25 @@
   width: 265px;
   height: 146px;
 }
+/*页脚*/
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+}
+
+#video-header {
+  height: 200px;
+  background: #2A3B36;
+  border-top: 1px solid #2A3B36;
+  border-bottom: 1px solid #2A3B36;
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
