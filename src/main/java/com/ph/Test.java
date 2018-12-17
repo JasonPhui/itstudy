@@ -1,4 +1,4 @@
-package com.ph.utils;
+package com.ph;
 
 public class Test {
 

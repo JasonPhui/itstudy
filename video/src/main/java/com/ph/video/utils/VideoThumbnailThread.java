@@ -1,5 +1,6 @@
 package com.ph.video.utils;
 
+import com.ph.constant.VideoConstant;
 import com.ph.video.entity.Configure;
 import com.ph.video.entity.Video;
 import com.ph.video.entity.VideoState;
@@ -8,7 +9,6 @@ import com.ph.video.service.VideoService;
 import com.ph.video.service.VideoStateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
@@ -32,8 +32,6 @@ public class VideoThumbnailThread  extends Thread{
     @Autowired
     private VideoStateService videoState;
 
-    private static final String ffmpegPath = "E:\\ffmpeg-20181213-e5a0013-win64-static\\bin\\ffmpeg.exe";
-
     public static VideoThumbnailThread thumbnailThread;
 
     private void genarator(String ffmpegPath,String upFilePath,String mediaPicPath, String ss){
@@ -49,7 +47,7 @@ public class VideoThumbnailThread  extends Thread{
         cutpic.add("-t"); // 添加参数＂-t＂，该参数指定持续时间
         cutpic.add("0.001"); // 添加持续时间为1毫秒
         cutpic.add("-s"); // 添加参数＂-s＂，该参数指定截取的图片大小
-        cutpic.add("265*149"); // 添加截取的图片大小为800*600
+        cutpic.add("274*123"); // 添加截取的图片大小为274*123
         cutpic.add(mediaPicPath); // 添加截取的图片的保存路径
         boolean mark = true;
         ProcessBuilder builder = new ProcessBuilder();
@@ -70,12 +68,12 @@ public class VideoThumbnailThread  extends Thread{
     public void run() {
         try {
             int order = 2;
-            File path = new File(ResourceUtils.getURL("classpath:").getPath());
+            File path = new File(VideoConstant.VIDEO_PATH);
             if(!path.exists())
                 path = new File("");
             Configure thumbnail_ss = config.getConfigure("thumbnail_ss");
             Configure folder_thumbnail = config.getConfigure("folder_thumbnail");
-            String realThumbnailDir = path + "\\resources\\" +  folder_thumbnail.getVal();
+            String realThumbnailDir = path + "\\resources\\" + folder_thumbnail.getVal();
             //Check
             File realThumbnailDirFile =new File(realThumbnailDir);
             if(!realThumbnailDirFile.exists()  && !realThumbnailDirFile.isDirectory()){
@@ -91,7 +89,7 @@ public class VideoThumbnailThread  extends Thread{
                         String realVideoOriPath = path + "\\resources\\" + video.getOriurl().replace("/", "\\");
                         String realThumbnailPath = realThumbnailDir + "\\" + video.getId() + ".jpg";
                         System.out.println(realThumbnailPath);
-                        genarator(ffmpegPath, realVideoOriPath, realThumbnailPath, thumbnail_ss.getVal());
+                        genarator(VideoConstant.FFMPEG_PATH, realVideoOriPath, realThumbnailPath, thumbnail_ss.getVal());
                         video.setThumbnailurl(folder_thumbnail.getVal()+"\\"+video.getId()+".jpg");
                         video.setVideostate(nextVideoState);
                         videoService.updateVideoByVideo(video);
